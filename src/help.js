@@ -1,11 +1,11 @@
 const help = (prefix) => {
 	return `
-「 *Toin BOT* 」
+「 *BOT Victor* 」
 
 ◪ *informações*
   ❏ Prefix: 「  ${prefix}  」
-  ❏ Criador : Toin
-  ❏ Como instalar o BOT: https://www.youtube.com/watch?v=4cjhlXo9aGo
+  ❏ Criador : *ADM Victor*
+  ❏ Grupo Shitpost Elite: https://chat.whatsapp.com/Eedio1m9BcO6YpY8vDE2p7
 
 ◪ *SOBRE*
   │
