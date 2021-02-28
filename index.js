@@ -662,7 +662,7 @@ case 'timer':
 					uptime = process.uptime()
 					teks = `*Nama bot* : ${me.name}\n*Número do bot* : @${me.jid.split('@')[0]}\n*Prefix* : ${prefix}\n*Contato de bloqueio total* : ${blocked.length}\n*O bot está ativo em* : ${kyun(uptime)}\n*Bate Papo Total* : ${totalchat.length}`
 					buffer = await getBuffer(me.imgUrl)
-					client.sendMessage(from, buffer, image, {caption: teks, contextInfo:{mentionedJid: [me.jid]}})
+					client.sendMessage(from, buffer, image, {caption: teks, contextInfo:{"mentionedJid": [me.jid]}})
 					break
 				case 'blocklist':
 					teks = 'Esta é a lista de números bloqueados :\n'
