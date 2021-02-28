@@ -666,7 +666,7 @@ case 'timer':
 						return;
 					}
 					buffer = await getBuffer(me.imgUrl)
-					client.sendMessage(from, buffer, image, {caption: teks, contextInfo:{mentionedJid": [me.jid]}})
+					client.sendMessage(from, buffer, image, {caption: teks, contextInfo:{"mentionedJid": [me.jid]}})
 					break
 				case 'blocklist':
 					teks = 'Esta é a lista de números bloqueados :\n'
