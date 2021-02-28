@@ -661,8 +661,12 @@ case 'timer':
 					me = client.user
 					uptime = process.uptime()
 					teks = `*Nama bot* : ${me.name}\n*Número do bot* : @${me.jid.split('@')[0]}\n*Prefix* : ${prefix}\n*Contato de bloqueio total* : ${blocked.length}\n*O bot está ativo em* : ${kyun(uptime)}\n*Bate Papo Total* : ${totalchat.length}`
+					if(me.imgUrl == null || me.imgUrl.length <= 0){
+						client.sendMessage(from, teks, text, {contextInfo:{"mentionedJid":[me.jid]}})
+						return;
+					}
 					buffer = await getBuffer(me.imgUrl)
-					client.sendMessage(from, buffer, image, {caption: teks, contextInfo:{"mentionedJid": [me.jid]}})
+					client.sendMessage(from, buffer, image, {caption: teks, contextInfo:{mentionedJid": [me.jid]}})
 					break
 				case 'blocklist':
 					teks = 'Esta é a lista de números bloqueados :\n'
@@ -1455,8 +1459,8 @@ case 'timer':
 					gatauda = body.slice(7)
 					reply(mess.wait)
                                         if (!isUser) return reply(mess.only.daftarB)
-					anu = await fetchJson(`https://arugaz.my.id/api/nekonime`, {method: 'get'})
-					buffer = await getBuffer(anu.result)
+					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/waifu?apikey=BotWeA`, {method: 'get'})
+					buffer = await getBuffer(anu.image)
 					client.sendMessage(from, buffer, image,{quoted: mek})
 					break
 				case 'randomanime':
