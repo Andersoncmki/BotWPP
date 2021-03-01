@@ -345,10 +345,10 @@ async function starts() {
                                         client.sendMessage(from, hisil, image, {quoted: mek, caption: makermenu(prefix), text})
                                         break*/
 case 'timer':
-				if (args[1]=="detik") {var timer = args[0]+"000"
-				} else if (args[1]=="menit") {var timer = args[0]+"0000"
-				} else if (args[1]=="jam") {var timer = args[0]+"00000"
-				} else {return reply("*pilih:*\ndetik\nmenit\njam")}
+				if (args[1]=="Segundo") {var timer = args[0]+"000"
+				} else if (args[1]=="Minuto") {var timer = args[0]+"0000"
+				} else if (args[1]=="Hora") {var timer = args[0]+"00000"
+				} else {return reply("*Escolha:*\nsegundo\nminuto\nhora")}
 				setTimeout( () => {
 				reply("Waktu habis")
 				}, timer)
@@ -441,17 +441,17 @@ case 'timer':
 			case 'quotes':
 				client.updatePresence(from, Presence.composing) 
                                 if (!isUser) return reply(mess.only.daftarB)
-				data = await fetchJson(`https://tobz-api.herokuapp.com/api/randomquotes?apikey=APIKEYLU`)
+				data = await fetchJson(`https://tobz-api.herokuapp.com/api/randomquotes?apikey=BotWeA`)
 				ez = `*➸ Author :* ${data.author}\n*➸ Quotes :* ${data.quotes}`
 				reply(ez)
 				break
 				case '3dtext':
-                data = await await getBuffer(`https://docs-jojo.herokuapp.com/api/text3d?text=${body.slice(8)}`)
+                data = await getBuffer(`https://docs-jojo.herokuapp.com/api/text3d?text=${body.slice(8)}`)
                 if (!isUser) return reply(mess.only.daftarB)
                 client.sendMessage(from, data, image, {quoted: mek, caption: body.slice(8)})
                 break
                 case 'fml':
-                data = await fetchJson(`https://docs-jojo.herokuapp.com/api/fml`)
+                data = await fetchJson(`https://tobz-api.herokuapp.com/api/randomfmylife?apikey=BotWeA`)
                 if (!isUser) return reply(mess.only.daftarB)
                 hasil = data.result.fml
                 reply(hasil)
@@ -509,7 +509,7 @@ case 'timer':
 					if (args.length < 1) return reply(`Enviar pedidos ${prefix}marvellogo texto, por exemplo ${prefix}marvellogo BotVictor`)
                                         if (!isUser) return reply(mess.only.daftarB)
 					reply(mess.wait)
-					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/ttp?text=halo&apikey=APIKEYLU`, {method: 'get'})
+					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/ttp?text=halo&apikey=BotWeA`, {method: 'get'})
 					buffer = await getBuffer(anu.result)
 					client.sendMessage(from, buffer, image, {quoted: mek})
 					break
@@ -517,13 +517,13 @@ case 'timer':
 				case 'artinama':
                   client.updatePresence(from, Presence.composing) 
                   if (!isUser) return reply(mess.only.daftarB)
-                    data = await fetchJson(`https://tobz-api.herokuapp.com/api/artinama?nama=tobz&apikey=APIKEYLU${body.slice(10)}`)
+                    data = await fetchJson(`https://tobz-api.herokuapp.com/api/artinama?nama=tobz${body.slice(10)}&apikey=BotWeA`)
                    reply(data.result)
                    break
 		case 'infonomor':
                client.updatePresence(from, Presence.composing) 
                  if (!isUser) return reply(mess.only.daftarB)
-                 if (args.length < 1) return reply(`Insira numeros\nExemplo : ${prefix}infonomor 5511987529...`)
+                 if (args.length < 1) return reply(`Insira numeros\nExemplo : ${prefix}infonomor +5511987...`)
                 data = await fetchJson(`https://docs-jojo.herokuapp.com/api/infonomor?no=${body.slice(11)}`)
                 if (data.error) return reply(data.error)
                 if (data.result) return reply(data.result)
@@ -534,13 +534,13 @@ case 'timer':
                client.updatePresence(from, Presence.composing)
                  if (!isUser) return reply(mess.only.daftarB)
                  if (args.length < 1) return reply(`Insira numeros\nExemplo : ${prefix}spamcall 55119875295...`)
-                data = await fetchJson(`https://arugaz.my.id/api/spamcall?no=${body.slice(10)}`)
+                data = await fetchJson(`https://tobz-api.herokuapp.com/api/spamcall?no=${body.slice(11)}&apikey=BotWeA`)
                 if (data.msg) return reply(data.msg)
                 hasil = data.logs
                 reply(hasil)
                 break
                    case 'map':
-                   data = await fetchJson(`https://tobz-api.herokuapp.com/api/spamcall?no=${body.slice(5)}`)
+                   data = await fetchJson(`https://tobz-api.herokuapp.com/api/spamcall?no=${body.slice(5)}&apikey=BotWeA`)
                    if (!isUser) return reply(mess.only.daftarB)
                    hasil = await getBuffer(data.gambar)
                    client.sendMessage(from, hasil, image, {quoted: mek, caption: `Hasil Dari *${body.slice(5)}*`})
@@ -548,7 +548,7 @@ case 'timer':
                    case 'covidcountry':
                    client.updatePresence(from, Presence.composing) 
                    if (!isUser) return reply(mess.only.daftarB)
-                   data = await fetchJson(`https://arugaz.my.id/api/corona?country=${body.slice(7)}`)
+                   data = await fetchJson(`https://api.covid19api.com/countries=${body.slice(7)}&apikey=BotWeA`)
                    if (data.result) reply(data.result)
                    hasil = `Negara : ${data.result.country}\n\nActive : ${data.result.active}\ncasesPerOneMillion : ${data.result.casesPerOneMillion}\ncritical : ${data.result.critical}\ndeathsPerOneMillion : ${data.result.deathsPerOneMillion}\nrecovered : ${data.result.recovered}\ntestPerOneMillion : ${data.result.testPerOneMillion}\ntodayCases : ${data.result.todayCases}\ntodayDeath : ${data.result.todayDeath}\ntotalCases : ${data.result.totalCases}\ntotalTest : ${data.result.totalTest}`
                    reply(hasil)
@@ -570,9 +570,9 @@ case 'timer':
 				case 'ytmp3':
 					if (args.length < 1) return reply('Poem a URL seu animal')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
-					anu = await fetchJson(`https://mhankbarbar.tech/api/yta?url=${args[0]}&apiKey=${BarBarKey}`, {method: 'get'})
+					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/yta?url=${args[0]}&apikey=BotWeA`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
-					teks = `❏ *Title* : ${anu.title}\n❏ *Filesize* : ${anu.filesize}\n\nEspera ai, o audio esta sendo enviado novamente...`
+					teks = `❏ *Titilo* : ${anu.title}\n❏ *Tamanho* : ${anu.filesize}\n\nEspera ai, o audio esta sendo enviado novamente...`
 					thumb = await getBuffer(anu.thumb)
 					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
 					buffer = await getBuffer(anu.result)
@@ -581,7 +581,7 @@ case 'timer':
 				case 'ytmp4':
 					if (args.length < 1) return reply('Poem a URL seu animal?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
-					anu = await fetchJson(`https://st4rz.herokuapp.com/api/ytv2?url=${args[0]}`, {method: 'get'})
+					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/yta?url=${args[0]}&apikey=BotWeA`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
 					teks = `*❏ Title* : ${anu.title}\n\n*VIDEO ESTA ENVIANDO, ESPERE*`
 					thumb = await getBuffer(anu.thumb)
@@ -601,7 +601,7 @@ case 'timer':
 					break
 				case 'testime':
 					setTimeout( () => {
-					client.sendMessage(from, 'O tempo acabou:v', text) // ur cods
+					client.sendMessage(from, 'O tempo acabou', text) // ur cods
 					}, 10000) // 1000 = 1s,
 					setTimeout( () => {
 					client.sendMessage(from, 'Mais 5 segundos', text) // ur cods
@@ -701,7 +701,7 @@ case 'timer':
 					break
 				case 'neonime':
 					client.updatePresence(from, Presence.composing) 
-					data = await fetchJson(`https://tobz-api.herokuapp.com/api/neonime`, {method: 'get'})
+					data = await fetchJson(`https://tobz-api.herokuapp.com/api/neonimeongoing?apikey=BotWea`, {method: 'get'})
                                         if (!isUser) return reply(mess.only.daftarB)
 					teks = '################\n'
 					for (let i of data.result) {
@@ -713,7 +713,7 @@ case 'timer':
               
                   if (args.length < 1) return reply(`Texto de entrada \nExemplo : ${prefix}Caliph Bot`)
                 data = await getBuffer(`https://docs-jojo.herokuapp.com/api/blackpink?text=${body.slice(7)}`)
-                if (!iUser) return reply(mess.only.daftarB)
+                if (!isUser) return reply(mess.only.daftarB)
                 client.sendMessage(from, data, image, {quoted: mek, caption: body.slice(7)})
                 break
 				case 'tts':
@@ -873,7 +873,7 @@ case 'timer':
 					client.sendMessage(nomor+'@s.whatsapp.net', pesan, text)
 					break
 					case 'quotesnime':
-					nimek = await fetchJson('https://animechanapi.xyz/api/quotes/random')
+					nimek = await fetchJson('https://tobz-api.herokuapp.com/api/randomanime?apikey=BotWeA')
 					hasil = `anime : ${nimek.data.anime}\nCharacter : ${nimek.data.character}\n${nimek.data.quote}`
 					reply(hasil)
 					break
@@ -995,7 +995,7 @@ case 'timer':
 					client.sendMessage(from, quran, text, {quoted: mek})
 					break
            case 'nekonime':
-           data = await fetchJson('https://waifu.pics/api/sfw/neko')
+           data = await fetchJson('https://tobz-api.herokuapp.com/api/nekonime?apikey=BotWeA')
            if (!isUser) return reply(mess.only.daftarB)
            hasil = await getBuffer(data.url)
            client.sendMessage(from, hasil, image, {quoted: mek})
@@ -1353,7 +1353,7 @@ case 'timer':
 					tels = body.slice(7)
 					if (tels.length > 15) return reply('O texto é muito longo, até 20 caracteres')
 					reply(mess.wait)
-					anu = await fetchJson(`https://kocakz.herokuapp.com/api/flamingtext/water?text=${tels}`, {method: 'get'})
+					anu = await fetchJson(`https://kocakz.herokuapp.com/api/flamingtext/water?text=${tels}&apikey=BotWeA`, {method: 'get'})
 					buffer = await getBuffer(anu.result)
 					client.sendMessage(from, buffer, image, {quoted: mek})
 					break
@@ -1412,7 +1412,7 @@ case 'timer':
 						res = await fetchJson(`https://tobz-api.herokuapp.com/api/randomshota?apikey=BotWeA`, {method: 'get'})
 						buffer = await getBuffer(res.result)
                                                 if (!isUser) return reply(mess.only.daftarB)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Nich'})
+						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Sua Tarada Pedofila'})
 					} catch (e) {
 						console.log(`Error :`, color(e,'red'))
 						reply('❌ *ERROR* ❌')
@@ -1578,7 +1578,7 @@ case 'timer':
                                         try{
                                                 if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
                                                 if (!isUser) return reply(mess.only.daftarB)
-                                                res = await fetchJson(`https://tobz-api.herokuapp.com/nsfwtrap?apikey=BotWeA`, {method: 'get'})
+                                                res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwtrap?apikey=BotWeA`, {method: 'get'})
                                                 buffer = await getBuffer(res.result)
                                                 client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Aqui está a foto...'})
                                         } catch (e) {
@@ -1622,7 +1622,7 @@ case 'timer':
 					case 'nsfwblowjob':
 						try {
 							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
-							res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwblowjob`, {method: 'get'})
+							res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwblowjob?apikey=BotWeA`, {method: 'get'})
 							buffer = await getBuffer(res.result)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Mama o ADM agora'})
 						} catch (e) {
@@ -1633,7 +1633,7 @@ case 'timer':
 					case 'nsfwneko':
 						try {
 							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
-							res = await fetchJson(`https://api.computerfreaker.cf/v1/neko`, {method: 'get'})
+							res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwneko?apikey=BotWeA`, {method: 'get'})
 							buffer = await getBuffer(res.result)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'tudo gostosa'})
 						} catch (e) {
@@ -1644,7 +1644,7 @@ case 'timer':
 					case 'trap':
 						try {
 							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
-							res = await fetchJson(`https://api.computerfreaker.cf/v1/trap`, {method: 'get'})
+							res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwtrap?apikey=BotWeA`, {method: 'get'})
 							buffer = await getBuffer(res.result)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'tu é mano?'})
 						} catch (e) {
@@ -1721,7 +1721,7 @@ case 'timer':
 						case 'nsfwvictor':
 						try {
 							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
-							res = await fetchJson(`https://tobz-api.herokuapp.com/nsfwtrap?apikey=BotWeA`, {method: 'get'})
+							res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwtrap?apikey=BotWeA`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Tai os peitos que vc queria\npunhetero de merda'})
 						} catch (e) {
@@ -1947,7 +1947,7 @@ case 'timer':
 					ranp = getRandom('.png')
 					rano = getRandom('.webp')
 					teks = body.slice(4).trim()
-					anu = await fetchJson(`https://mhankbarbar.tech/api/text2image?text=${teks}&apiKey=${BarBarKey}`, {method: 'get'})
+					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/ttp?text=${teks}&apiKey=BotWeA`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
 					exec(`wget ${anu.result} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
 						fs.unlinkSync(ranp)
