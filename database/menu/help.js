@@ -1,10 +1,10 @@
 const help = (prefix, ownerBot, botName) => {
         return `
-「 *${botName}* 」
+「 *${BOTZIN DO ANSON}* 」
 
 ◪ *INFO*
-  ❏ Prefix: 「  ${prefix}  」
-  ❏ Creator: ${ownerBot}
+  ❏ Prefix: 「  ${!}  」
+  ❏ Dono: Anderson
 ◪ *ABOUT*
   │
   ├─ ❏ ${prefix}info
@@ -35,7 +35,7 @@ const help = (prefix, ownerBot, botName) => {
   ├─ ❏ ${prefix}stayonscreenmenu
   ├─ ❏ ${prefix}ownermenu
   └─ ❏ ${prefix}othermenu
-◪ *OTHER*
+◪ *OUTROS*
   │
   ├─ ❏ ${prefix}send
   ├─ ❏ ${prefix}wame
