@@ -3,8 +3,8 @@ const help = (prefix, ownerBot, botName) => {
 「 *${botName}* 」
 
 ◪ *INFO*
-  ❏ Prefix: 「  ${prefix}  」
-  ❏ Creator: ${ownerBot}
+  ❏ Prefix: 「  ${!}  」
+  ❏ Creator: ${Anderson}
 ◪ *ABOUT*
   │
   ├─ ❏ ${prefix}info
